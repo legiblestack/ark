@@ -1,0 +1,15 @@
+{
+  "name": "ark",
+  "version": "1.3.0",
+  "description": "ARK - Network traffic, port, firewall, and registry security monitor for Windows",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "canvas": "^3.2.3"
+  }
+}

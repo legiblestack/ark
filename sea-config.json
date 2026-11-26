@@ -1,0 +1,10 @@
+{
+  "main": "server.js",
+  "output": "build/ark-sea.blob",
+  "disableExperimentalSEAWarning": true,
+  "useSnapshot": false,
+  "useCodeCache": false,
+  "assets": {
+    "ui.html": "ui.html"
+  }
+}

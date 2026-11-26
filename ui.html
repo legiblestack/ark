@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ARK — a Legible project</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f1419; color: #e0e0e0; }
+  header {
+    background: linear-gradient(135deg, #1a1f2e, #232d3f);
+    padding: 1rem 1.5rem; border-bottom: 1px solid #2a3447;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  header h1 { font-size: 1.25rem; color: #00d4ff; letter-spacing: .5px; }
+  .meta { font-size: .8rem; color: #888; }
+  .tabs { display: flex; gap: 1.5rem; padding: 0 1.5rem; background: #1a1f2e; border-bottom: 1px solid #2a3447; }
+  .tab { background: none; border: none; color: #888; padding: .9rem 0; cursor: pointer; font-size: .95rem;
+         border-bottom: 3px solid transparent; }
+  .tab:hover { color: #00d4ff; }
+  .tab.active { color: #00d4ff; border-bottom-color: #00d4ff; }
+  main { padding: 1.5rem; }
+  .row { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; }
+  input[type=text] { background: #232d3f; border: 1px solid #2a3447; color: #e0e0e0;
+        padding: .6rem .8rem; border-radius: 6px; font-size: .95rem; flex: 1; min-width: 240px; }
+  button.act { background: #00d4ff; color: #0f1419; border: none; padding: .6rem 1.1rem;
+        border-radius: 6px; font-weight: 600; cursor: pointer; }
+  button.act:hover { background: #00b8cc; }
+  button.act:disabled { opacity: .5; cursor: not-allowed; }
+  .stats { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .stat { background: #1a1f2e; border: 1px solid #2a3447; border-radius: 8px; padding: 1rem 1.4rem; min-width: 140px; }
+  .stat .l { font-size: .75rem; text-transform: uppercase; color: #888; letter-spacing: .5px; }
+  .stat .v { font-size: 1.7rem; font-weight: 700; color: #00d4ff; }
+  table { width: 100%; border-collapse: collapse; background: #1a1f2e; border-radius: 8px; overflow: hidden; }
+  th { background: #232d3f; color: #00d4ff; text-align: left; padding: .7rem .8rem; font-size: .85rem; position: sticky; top: 0; }
+  td { padding: .55rem .8rem; border-top: 1px solid #2a3447; font-size: .88rem; }
+  tr:hover td { background: #252f3f; }
+  .mono { font-family: Consolas, monospace; }
+  .ext { color: #ff6b6b; font-weight: 600; }
+  .badge { padding: .15rem .55rem; border-radius: 10px; font-size: .78rem; }
+  .b-ok { background: #1f7a35; color: #d6ffd9; }
+  .b-warn { background: #8a6d1a; color: #fff4cf; }
+  .b-bad { background: #8a2020; color: #ffd6d6; }
+  .alert { padding: .8rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-size: .9rem; }
+  .a-warn { background: rgba(255,193,7,.1); border: 1px solid #ffc107; color: #ffc107; }
+  .a-bad { background: rgba(255,107,107,.1); border: 1px solid #ff6b6b; color: #ff6b6b; }
+  .a-info { background: rgba(0,212,255,.08); border: 1px solid #00d4ff; color: #00d4ff; }
+  pre { background: #0f1419; border: 1px solid #2a3447; border-radius: 6px; padding: 1rem;
+        font-family: Consolas, monospace; font-size: .82rem; white-space: pre-wrap; word-break: break-word;
+        max-height: 460px; overflow: auto; color: #9fe8ff; }
+  .muted { color: #888; text-align: center; padding: 1.4rem; }
+  .scroll { max-height: 62vh; overflow: auto; border-radius: 8px; }
+  /* small inline buttons in tables */
+  button.mini { border: 1px solid #2a3447; background: #232d3f; color: #cfe9ff; cursor: pointer;
+        font-size: .76rem; padding: .25rem .55rem; border-radius: 5px; margin-right: .3rem; }
+  button.mini:hover { border-color: #00d4ff; color: #00d4ff; }
+  button.mini.danger { color: #ffb3b3; }
+  button.mini.danger:hover { border-color: #ff6b6b; color: #ff6b6b; background: rgba(255,107,107,.08); }
+  /* sub-tabs */
+  .subtabs { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .subtab { background: #1a1f2e; border: 1px solid #2a3447; color: #cfd6e0; padding: .45rem .9rem;
+        border-radius: 6px; cursor: pointer; font-size: .85rem; }
+  .subtab.active { background: #00d4ff; color: #0f1419; border-color: #00d4ff; font-weight: 600; }
+  /* admin pill */
+  .pill { font-size: .72rem; padding: .2rem .6rem; border-radius: 10px; margin-left: .6rem; }
+  .pill.adm { background: #1f7a35; color: #d6ffd9; }
+  .pill.noadm { background: #8a6d1a; color: #fff4cf; }
+  /* modal */
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); display: none;
+        align-items: center; justify-content: center; z-index: 50; }
+  .overlay.show { display: flex; }
+  .modal { background: #1a1f2e; border: 1px solid #2a3447; border-radius: 10px; padding: 1.4rem;
+        width: min(620px, 92vw); box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .modal h3 { color: #00d4ff; margin-bottom: 1rem; }
+  .modal .kv { display: grid; grid-template-columns: 130px 1fr; gap: .4rem .8rem; font-size: .9rem; }
+  .modal .kv .k { color: #888; }
+  .modal .kv .v { word-break: break-word; font-family: Consolas, monospace; }
+  .modal .foot { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1.4rem; }
+  .sig-ok { color: #6bdc8a; } .sig-bad { color: #ff6b6b; } .sig-unk { color: #ffc107; }
+</style>
+</head>
+<body>
+<header>
+  <h1><img src="data:image/png;base64,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" alt="Legible cube" style="width:34px;height:34px;vertical-align:-10px;margin-right:8px"/> ARK <span style="font-size:.7rem;color:#6f8197;font-weight:400;letter-spacing:.3px">network security monitor — a Legible project</span> <span class="pill" id="adminPill">checking…</span></h1>
+  <span class="meta" id="meta">ready</span>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="connections">Active Connections</button>
+  <button class="tab" data-tab="ports">Ports &amp; Scanner</button>
+  <button class="tab" data-tab="firewall">Firewall Logs</button>
+  <button class="tab" data-tab="registry">Registry &amp; Startup</button>
+  <button class="tab" data-tab="guards">Connection Guard</button>
+</nav>
+
+<main id="view"></main>
+
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+const view = document.getElementById('view');
+const meta = document.getElementById('meta');
+let active = 'connections';
+let timer = null;
+
+function isExternal(ip) {
+  if (!ip) return false;
+  return !/^(10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.|127\.|::1|fe80|0\.0\.0\.0|::$)/.test(ip);
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
+
+// Per-run token injected by the server when it served this page. It goes in a
+// custom header, which is what actually blocks cross-site requests: a custom
+// header forces a CORS preflight that an attacking page cannot satisfy.
+const ARK_HEADERS = { 'X-ARK-Token': (window.__ARK_TOKEN__ || '') };
+
+// Fetch with a timeout and one retry. A transient hiccup (PowerShell busy, server
+// mid-restart) should not leave the pane empty and silent.
+async function api(p, opts){
+  const tries = (opts && opts.tries) || 2;
+  const timeout = (opts && opts.timeout) || 60000;
+  let last = 'unknown error';
+  for (let i = 0; i < tries; i++){
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), timeout);
+    try {
+      const r = await fetch(p, { signal: ctl.signal, headers: ARK_HEADERS });
+      clearTimeout(t);
+      if (!r.ok) { last = 'HTTP ' + r.status + ' from ' + p; }
+      else return await r.json();
+    } catch(e){
+      clearTimeout(t);
+      last = e.name === 'AbortError' ? ('Timed out after ' + Math.round(timeout/1000) + 's') : e.message;
+    }
+    if (i < tries - 1) await new Promise(r => setTimeout(r, 800));
+  }
+  return { ok:false, error:last, data:[] };
+}
+
+// Render a readable failure in the pane instead of leaving it blank.
+function showError(where, err, retryFn, target){
+  (target || view).innerHTML = `<div class="muted" style="border-left:3px solid #e06c75;padding:10px 14px">
+    <div style="color:#e06c75;font-weight:600;margin-bottom:6px">Couldn't load ${esc(where)}</div>
+    <div>${esc(err || 'Unknown error')}</div>
+    <div style="margin-top:10px">
+      <button id="errRetry" class="btn">Retry</button>
+      <span style="margin-left:10px">If this persists, check the server window, or open
+      <a href="/api/health" target="_blank">/api/health</a>.</span>
+    </div></div>`;
+  const b = document.getElementById('errRetry');
+  if (b && retryFn) b.onclick = retryFn;
+  setMeta('error');
+}
+async function api2(p, method){
+  try { const r = await fetch(p, { method, headers: ARK_HEADERS }); return await r.json(); }
+  catch(e){ return { ok:false, error:e.message, data:[] }; }
+}
+async function api2json(p, method, body){
+  try { const r = await fetch(p, { method, headers: Object.assign({ 'Content-Type':'application/json' }, ARK_HEADERS), body: JSON.stringify(body) }); return await r.json(); }
+  catch(e){ return { ok:false, error:e.message, data:[] }; }
+}
+
+function setMeta(t){ meta.textContent = t + ' · ' + new Date().toLocaleTimeString(); }
+
+async function checkAdmin(){
+  const pill = document.getElementById('adminPill');
+  const r = await api('/api/admin');
+  if (r.admin){ pill.className = 'pill adm'; pill.textContent = 'Administrator'; }
+  else { pill.className = 'pill noadm'; pill.textContent = 'Standard user — limited'; pill.title = 'Run via RUN-ADMIN.bat for firewall logs, full registry, and process kill.'; }
+}
+
+// ---------- CONNECTIONS ----------
+const ORDER = { UNKNOWN: 0, ELEVATED: 1, MODERATE: 2, LOW: 3, SAFE: 4, LOCAL: 5 };
+const LEVEL_COLOR = { SAFE:'#3ddc84', LOW:'#9ad94f', MODERATE:'#ffc107', ELEVATED:'#ff8c3a', UNKNOWN:'#ff5252', LOCAL:'#5a6b7a' };
+function threatBadge(t){
+  const lv = (t && t.level) || 'LOCAL';
+  const c = (t && t.color) || LEVEL_COLOR[lv] || '#5a6b7a';
+  const title = t && t.reasons ? t.reasons.join('  •  ') : '';
+  return `<span class="badge" title="${esc(title)}" style="background:${c}22;color:${c};border:1px solid ${c}66">${lv}</span>`;
+}
+async function renderConnections(){
+  const res = await api('/api/connections');
+  if (res.ok === false){ showError('active connections', res.error, renderConnections); return; }
+  let rows = res.data || [];
+  // sort most-severe first (external risk on top), keep LOCAL at bottom
+  rows = rows.slice().sort((a,b) => (ORDER[a.threat?.level] ?? 9) - (ORDER[b.threat?.level] ?? 9));
+  const ext = rows.filter(r => r.threat && r.threat.level !== 'LOCAL');
+  const count = lv => ext.filter(r => r.threat.level === lv).length;
+  const risky = count('UNKNOWN') + count('ELEVATED');
+  // Preserve scroll position across the auto-refresh re-render (don't jump to top)
+  const prevScrollEl = view.querySelector('.scroll');
+  const prevScrollTop = prevScrollEl ? prevScrollEl.scrollTop : 0;
+  const prevWinY = window.scrollY;
+  view.innerHTML = `
+    ${res.ok ? '' : `<div class="alert a-bad">Error: ${esc(res.error)}</div>`}
+    ${risky ? `<div class="alert a-bad">${risky} external connection(s) rated ELEVATED or UNKNOWN — review the top rows. Hover a badge for the reasoning.</div>`
+            : (ext.length ? `<div class="alert a-info">${ext.length} external connection(s); none rated elevated. Hover a badge to see why.</div>` : '')}
+    <div class="stats">
+      <div class="stat"><div class="l">Established</div><div class="v">${rows.length}</div></div>
+      <div class="stat"><div class="l">Safe / Low</div><div class="v" style="color:#3ddc84">${count('SAFE')+count('LOW')}</div></div>
+      <div class="stat"><div class="l">Moderate</div><div class="v" style="color:#ffc107">${count('MODERATE')}</div></div>
+      <div class="stat"><div class="l">Elevated</div><div class="v" style="color:#ff8c3a">${count('ELEVATED')}</div></div>
+      <div class="stat"><div class="l">Unknown</div><div class="v" style="color:#ff5252">${count('UNKNOWN')}</div></div>
+    </div>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.78rem;color:#9fb3c8">
+      <span><span style="color:#3ddc84">●</span> SAFE — signed known publisher + known destination</span>
+      <span><span style="color:#9ad94f">●</span> LOW</span>
+      <span><span style="color:#ffc107">●</span> MODERATE — destination unconfirmed</span>
+      <span><span style="color:#ff8c3a">●</span> ELEVATED</span>
+      <span><span style="color:#ff5252">●</span> UNKNOWN — unsigned / odd port / no info</span>
+    </div>
+    <div class="scroll"><table><thead><tr>
+      <th>Threat</th><th>Process</th><th>PID</th><th>Remote</th><th>rDNS</th><th>R.Port</th><th>Sig</th><th>Actions</th>
+    </tr></thead><tbody>
+      ${rows.length ? rows.map(r => {
+        const t = r.threat || {};
+        const c = t.color || '#5a6b7a';
+        return `<tr style="box-shadow:inset 3px 0 0 ${c}">
+        <td>${threatBadge(t)}</td>
+        <td>${esc(r.ProcessName)}</td>
+        <td class="mono">${esc(r.PID)}</td>
+        <td class="mono" style="${t.level&&t.level!=='LOCAL'?`color:${c}`:''}">${esc(r.RemoteAddress)}</td>
+        <td class="mono" style="font-size:.76rem;color:#9fb3c8">${t.rdns?esc(t.rdns):(t.level==='LOCAL'?'—':'<span style="color:#ff8c3a">no PTR</span>')}</td>
+        <td class="mono">${esc(r.RemotePort)}</td>
+        <td class="${sigClass(r.Signature||'')}" style="font-size:.8rem">${esc(r.Signature||'?')}</td>
+        <td>
+          <button class="mini" onclick="investigate(${esc(r.PID)})">Investigate</button>
+          <button class="mini danger" onclick="killPid(${esc(r.PID)}, '${esc(r.ProcessName).replace(/'/g,"")}')">Kill</button>
+        </td>
+      </tr>`;}).join('') : `<tr><td colspan="8" class="muted">No established connections</td></tr>`}
+    </tbody></table></div>`;
+  // Restore scroll position so the view stays put on refresh
+  const newScrollEl = view.querySelector('.scroll');
+  if (newScrollEl) newScrollEl.scrollTop = prevScrollTop;
+  window.scrollTo(0, prevWinY);
+  setMeta(rows.length + ' connections · ' + ext.length + ' external');
+}
+
+// ---------- PROCESS INVESTIGATE / KILL ----------
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+function closeModal(){ overlay.classList.remove('show'); }
+overlay.onclick = (e) => { if (e.target === overlay) closeModal(); };
+
+function sigClass(s){
+  if (/^Valid$/i.test(s)) return 'sig-ok';
+  if (/NotSigned|HashMismatch|NotTrusted/i.test(s)) return 'sig-bad';
+  return 'sig-unk';
+}
+async function investigate(pid){
+  modal.innerHTML = '<h3>Investigating PID ' + pid + '…</h3><div class="muted">Reading process details…</div>';
+  overlay.classList.add('show');
+  const res = await api('/api/process?pid=' + pid);
+  const d = (res.data && res.data[0]) || {};
+  if (d.Error || res.ok === false){
+    modal.innerHTML = '<h3>PID ' + pid + '</h3><div class="alert a-bad">' + esc(d.Error || res.error) + '</div>'
+      + '<div class="foot"><button class="act" onclick="closeModal()">Close</button></div>';
+    return;
+  }
+  const sig = d.Signature || 'unknown';
+  modal.innerHTML = `
+    <h3>${esc(d.Name)} <span class="muted" style="padding:0;font-size:.9rem">(PID ${esc(d.Id)})</span></h3>
+    <div class="kv">
+      <div class="k">Signature</div><div class="v ${sigClass(sig)}">${esc(sig)}</div>
+      <div class="k">Company</div><div class="v">${esc(d.Company)||'<span class="sig-unk">— none —</span>'}</div>
+      <div class="k">Product</div><div class="v">${esc(d.Product)||'—'}</div>
+      <div class="k">Path</div><div class="v">${esc(d.Path)||'<span class="sig-unk">— hidden / access denied —</span>'}</div>
+    </div>
+    ${/^Valid$/i.test(sig) ? '' : '<div class="alert a-warn" style="margin-top:1rem">Not a valid signature — verify this is expected. Unsigned binaries in AppData/Temp are a common malware trait.</div>'}
+    <div class="foot">
+      <button class="mini danger" style="font-size:.9rem;padding:.5rem .9rem" onclick="killPid(${esc(d.Id)}, '${esc(d.Name).replace(/'/g,"")}')">Kill process</button>
+      <button class="act" onclick="closeModal()">Close</button>
+    </div>`;
+}
+async function killPid(pid, name){
+  if (!confirm('Kill process ' + name + ' (PID ' + pid + ')?\\n\\nThis force-terminates it immediately. Killing a critical system process can crash Windows.')) return;
+  const res = await api2('/api/kill?pid=' + pid, 'POST');
+  const d = (res.data && res.data[0]) || res;
+  if (d.Killed){
+    closeModal();
+    setMeta('killed PID ' + pid + (d.Via ? ' (' + d.Via + ')' : ''));
+    RENDER[active]();
+  } else if (d.Denied || /denied/i.test(d.Error || '')){
+    if (d.Admin){
+      alert('Access denied killing PID ' + pid + ' (' + (d.Name||name) + ').\\n\\n'
+        + 'ARK IS running as Administrator, so this is a PROTECTED process — Windows blocks even admins from terminating it (e.g. a protected/PPL system or antivirus process). This is by design and cannot be overridden from user space.');
+    } else {
+      alert('Access denied — ARK is running as a STANDARD user.\\n\\n'
+        + 'To kill processes owned by the system or other accounts, relaunch ARK elevated:\\n'
+        + '  • Close the current ARK server window, then\\n'
+        + '  • Double-click  C:\\\\ARK\\\\RUN-ADMIN.bat  and approve the UAC prompt.\\n\\n'
+        + 'The header pill will then read "Administrator".');
+    }
+  } else {
+    alert('Could not kill PID ' + pid + ':\\n' + (d.Error || res.error || 'unknown error'));
+  }
+}
+
+// ---------- PORTS ----------
+const COMMON = {21:'FTP',22:'SSH',23:'Telnet',25:'SMTP',53:'DNS',80:'HTTP',110:'POP3',135:'RPC',139:'NetBIOS',143:'IMAP',443:'HTTPS',445:'SMB',3306:'MySQL',3389:'RDP',5432:'Postgres',5900:'VNC',8080:'HTTP-alt',27017:'MongoDB'};
+async function renderPorts(){
+  const res = await api('/api/listening');
+  if (res.ok === false){ showError('listening ports', res.error, renderPorts); return; }
+  const rows = res.data || [];
+  view.innerHTML = `
+    <div class="row">
+      <input type="text" id="scanTarget" placeholder="Scan target — e.g. localhost, 127.0.0.1, 192.168.1.1" value="localhost"/>
+      <button class="act" id="scanBtn">Run nmap scan</button>
+    </div>
+    <div id="scanOut"></div>
+    <div class="stats"><div class="stat"><div class="l">Listening ports</div><div class="v">${rows.length}</div></div></div>
+    <div class="scroll"><table><thead><tr><th>Port</th><th>Service</th><th>Address</th><th>Process</th><th>PID</th><th>Action</th></tr></thead><tbody>
+      ${rows.length ? rows.map(r => `<tr>
+        <td class="mono" style="color:#00d4ff;font-weight:600">${esc(r.LocalPort)}</td>
+        <td>${COMMON[r.LocalPort]||'<span class="muted" style="padding:0">—</span>'}</td>
+        <td class="mono">${esc(r.LocalAddress)}</td>
+        <td>${esc(r.ProcessName)}</td>
+        <td class="mono">${esc(r.PID)}</td>
+        <td>
+          <button class="mini" onclick="investigate(${esc(r.PID)})">Investigate</button>
+          <button class="mini danger" onclick="killPid(${esc(r.PID)}, '${esc(r.ProcessName).replace(/'/g,"")}')">Kill</button>
+        </td>
+      </tr>`).join('') : `<tr><td colspan="6" class="muted">No listening ports</td></tr>`}
+    </tbody></table></div>`;
+  setMeta(rows.length + ' listening');
+  document.getElementById('scanBtn').onclick = async () => {
+    const t = document.getElementById('scanTarget').value.trim();
+    const btn = document.getElementById('scanBtn');
+    const out = document.getElementById('scanOut');
+    btn.disabled = true; btn.textContent = 'Scanning…';
+    out.innerHTML = `<div class="alert a-info">Running nmap against ${esc(t)} … this can take 10–60s.</div>`;
+    const r = await api('/api/scan?target=' + encodeURIComponent(t));
+    out.innerHTML = r.ok ? `<pre>${esc(r.output)}</pre>` : `<div class="alert a-bad">${esc(r.error)}</div>`;
+    btn.disabled = false; btn.textContent = 'Run nmap scan';
+  };
+}
+
+// ---------- FIREWALL (posture + scored inbound-allow rules) ----------
+const FW_ORDER = { HIGH:0, ELEVATED:1, MODERATE:2, LOW:3, SAFE:4, INFO:5, OFF:6 };
+async function renderFirewall(){
+  const res = await api('/api/firewall');
+  if (res.ok === false){ showError('firewall logs', res.error, renderFirewall); return; }
+  const d = (res.data && res.data[0]) || { profiles:[], rules:[] };
+  const profiles = d.profiles || [];
+  const rules = d.rules || [];
+  // the attack surface = inbound ALLOW + active rules, scored
+  let holes = rules.filter(r => r.threat && r.threat.inboundAllow);
+  holes.sort((a,b) => (FW_ORDER[a.threat.level] ?? 9) - (FW_ORDER[b.threat.level] ?? 9) || (a.threat.score - b.threat.score));
+  const count = lv => holes.filter(r => r.threat.level === lv).length;
+  const risky = count('HIGH') + count('ELEVATED');
+  const blocked = rules.filter(r => (r.Action||'').toLowerCase()==='block').length;
+
+  const profilePill = p => {
+    const bad = !p.Enabled || /allow/i.test(p.Inbound);
+    const c = !p.Enabled ? '#ff5252' : (/allow/i.test(p.Inbound) ? '#ff8c3a' : '#3ddc84');
+    return `<div class="stat" style="border-left:3px solid ${c}">
+      <div class="l">${esc(p.Name)} profile</div>
+      <div class="v" style="font-size:1rem;color:${c}">${p.Enabled?'ON':'OFF'}</div>
+      <div class="muted" style="padding:0;font-size:.74rem">in: ${esc(p.Inbound)} · out: ${esc(p.Outbound)}</div>
+    </div>`;
+  };
+
+  view.innerHTML = `
+    ${res.ok ? '' : `<div class="alert a-bad">Error: ${esc(res.error)}</div>`}
+    ${profiles.some(p=>!p.Enabled) ? `<div class="alert a-bad">A firewall profile is DISABLED — your machine is exposed on that network type.</div>` : ''}
+    ${risky ? `<div class="alert a-warn">${risky} inbound-allow rule(s) rated ELEVATED/HIGH — these are open holes in your firewall. Hover a badge for why.</div>`
+            : `<div class="alert a-info">No high-risk inbound allow rules. Hover a badge to see each rule's reasoning.</div>`}
+    <div class="stats">${profiles.map(profilePill).join('')}</div>
+    <div class="stats">
+      <div class="stat"><div class="l">Inbound-allow rules</div><div class="v">${holes.length}</div></div>
+      <div class="stat"><div class="l">Safe / Low</div><div class="v" style="color:#3ddc84">${count('SAFE')+count('LOW')}</div></div>
+      <div class="stat"><div class="l">Moderate</div><div class="v" style="color:#ffc107">${count('MODERATE')}</div></div>
+      <div class="stat"><div class="l">Elevated</div><div class="v" style="color:#ff8c3a">${count('ELEVATED')}</div></div>
+      <div class="stat"><div class="l">High</div><div class="v" style="color:#ff5252">${count('HIGH')}</div></div>
+      <div class="stat"><div class="l">Block rules</div><div class="v" style="color:#9fb3c8">${blocked}</div></div>
+    </div>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.78rem;color:#9fb3c8">
+      <span><span style="color:#3ddc84">●</span> SAFE</span><span><span style="color:#9ad94f">●</span> LOW</span>
+      <span><span style="color:#ffc107">●</span> MODERATE</span><span><span style="color:#ff8c3a">●</span> ELEVATED</span>
+      <span><span style="color:#ff5252">●</span> HIGH — broad/any program, sensitive port, or public network</span>
+      <span style="margin-left:auto">Showing inbound ALLOW rules (your attack surface). ${blocked} block rules hidden.</span>
+    </div>
+    <div class="scroll"><table><thead><tr>
+      <th>Threat</th><th>Trust</th><th>Rule</th><th>Program</th><th>Port</th><th>Proto</th><th>Profile</th>
+    </tr></thead><tbody>
+      ${holes.length ? holes.map(r => {
+        const t = r.threat, c = t.color;
+        return `<tr style="box-shadow:inset 3px 0 0 ${c}">
+          <td><span class="badge" title="${esc(t.reasons.join('  •  '))}" style="background:${c}22;color:${c};border:1px solid ${c}66">${t.level}</span></td>
+          <td class="mono" style="color:${c};font-weight:600">${t.score==null?'—':t.score}</td>
+          <td style="font-size:.82rem">${esc(r.Name||'(unnamed)')}</td>
+          <td class="mono" style="font-size:.76rem">${r.App?esc(r.App):'<span class="ext">ANY program</span>'}</td>
+          <td class="mono">${r.LPort?esc(r.LPort):'<span class="sig-unk">Any</span>'}</td>
+          <td class="mono" style="font-size:.8rem">${esc(r.Proto||'')}</td>
+          <td style="font-size:.78rem;color:#9fb3c8">${esc(r.Profile||'All')}</td>
+        </tr>`;
+      }).join('') : `<tr><td colspan="7" class="muted">No active inbound allow rules found</td></tr>`}
+    </tbody></table></div>`;
+  setMeta(holes.length + ' inbound-allow rules · ' + risky + ' risky');
+}
+
+// ---------- REGISTRY & STARTUP (sub-tabs) ----------
+const SUS = [/powershell/i,/cmd\.exe/i,/rundll32/i,/cscript/i,/wscript/i,/\.vbs/i,/\.bat/i,/\\temp\\/i,/appdata/i,/\.scr/i,/mshta/i,/\.ps1/i];
+function suspicious(v){ return SUS.some(rx => rx.test(v||'')); }
+function isSysPath(v){ return /c:\\windows|\\system32\\|securityhealth|onedrivesetup/i.test(v||''); }
+let regSub = 'startup';
+
+async function renderRegistry(){
+  view.innerHTML = `
+    <div class="subtabs">
+      <button class="subtab ${regSub==='startup'?'active':''}" data-sub="startup">Startup Items</button>
+      <button class="subtab ${regSub==='services'?'active':''}" data-sub="services">Auto-Start Services</button>
+      <button class="subtab ${regSub==='programs'?'active':''}" data-sub="programs">Installed Programs</button>
+    </div>
+    <div id="regBody"><div class="muted">Loading…</div></div>`;
+  view.querySelectorAll('.subtab').forEach(b => b.onclick = () => { regSub = b.dataset.sub; renderRegistry(); });
+  if (regSub === 'startup') return renderStartup();
+  if (regSub === 'services') return renderServices();
+  if (regSub === 'programs') return renderPrograms();
+}
+
+let startupRows = [];
+async function renderStartup(){
+  const body = document.getElementById('regBody');
+  const res = await api('/api/startup');
+  if (res.ok === false){ showError('startup items', res.error, renderStartup, body); return; }
+  const rows = res.data || [];
+  startupRows = rows; // keep for delete-by-index
+  const flagged = rows.filter(r => suspicious(r.Value));
+  const protectedRow = r => /^Winlogon/i.test(r.Source); // never deletable from here
+  body.innerHTML = `
+    ${res.ok ? '' : `<div class="alert a-bad">Error: ${esc(res.error)}</div>`}
+    ${flagged.length ? `<div class="alert a-warn">${flagged.length} startup entr${flagged.length>1?'ies':'y'} match suspicious patterns (highlighted). Verify before removing.</div>`
+                     : `<div class="alert a-info">No suspicious patterns in Run keys, Winlogon, or startup folders.</div>`}
+    <div class="stats">
+      <div class="stat"><div class="l">Autostart entries</div><div class="v">${rows.length}</div></div>
+      <div class="stat"><div class="l">Flagged</div><div class="v" style="color:${flagged.length?'#ff6b6b':'#4caf50'}">${flagged.length}</div></div>
+    </div>
+    <div class="row" style="margin-bottom:.6rem">
+      <button class="mini danger" id="delSelBtn" style="font-size:.85rem;padding:.45rem .9rem">Delete selected (to quarantine)</button>
+      <span class="muted" id="selCount" style="padding:0;font-size:.82rem">0 selected</span>
+      <span class="muted" style="padding:0;font-size:.78rem;margin-left:auto">Removed items are backed up to C:\\ARK\\quarantine and are recoverable.</span>
+    </div>
+    <div class="scroll"><table><thead><tr>
+      <th style="width:34px"><input type="checkbox" id="selAll" title="Select all deletable"/></th>
+      <th>Source</th><th>Name</th><th>Value / Path</th><th></th>
+    </tr></thead><tbody>
+      ${rows.length ? rows.map((r, i) => {
+        const s = suspicious(r.Value);
+        const prot = protectedRow(r);
+        return `<tr${s?' style="background:rgba(255,107,107,.07)"':''}>
+          <td>${prot
+            ? '<span title="Critical to Windows login — protected from deletion">🔒</span>'
+            : `<input type="checkbox" class="selRow" data-i="${i}"/>`}</td>
+          <td style="font-size:.8rem;color:#9fb3c8">${esc(r.Source)}</td>
+          <td>${esc(r.Name)}</td>
+          <td class="mono ${s?'ext':''}">${esc(r.Value)}</td>
+          <td>${isSysPath(r.Value)?'<span class="badge b-warn" title="Points into Windows/System — removing this may harm the OS. Verify before deleting.">⚠ system</span> ':''}${s?'<span class="badge b-bad">review</span>':'<span class="badge b-ok">ok</span>'}</td>
+        </tr>`;
+      }).join('') : `<tr><td colspan="5" class="muted">No startup entries found</td></tr>`}
+    </tbody></table></div>`;
+  setMeta(rows.length + ' autostart');
+
+  // selection wiring
+  const boxes = () => Array.from(body.querySelectorAll('.selRow'));
+  const updateCount = () => {
+    const n = boxes().filter(b => b.checked).length;
+    body.querySelector('#selCount').textContent = n + ' selected';
+  };
+  body.querySelectorAll('.selRow').forEach(b => b.onchange = updateCount);
+  const selAll = body.querySelector('#selAll');
+  if (selAll) selAll.onchange = () => { boxes().forEach(b => b.checked = selAll.checked); updateCount(); };
+  body.querySelector('#delSelBtn').onclick = () => deleteSelectedStartup(boxes());
+}
+
+async function deleteSelectedStartup(boxes){
+  const chosen = boxes.filter(b => b.checked).map(b => startupRows[parseInt(b.dataset.i,10)]).filter(Boolean);
+  if (!chosen.length){ alert('Nothing selected. Tick the checkbox next to the startup items you want to remove.'); return; }
+  const list = chosen.map(r => '  • [' + r.Source + '] ' + r.Name).join('\\n');
+  if (!confirm('Remove these ' + chosen.length + ' startup item(s)?\\n\\n' + list
+    + '\\n\\nThey will be BACKED UP to C:\\\\ARK\\\\quarantine (registry values logged, startup files moved) so you can restore them. Registry HKLM changes require ARK to be running as Administrator.')) return;
+  const payload = { items: chosen.map(r => ({ source: r.Source, name: r.Name, value: r.Value })) };
+  const res = await api2json('/api/startup/delete', 'POST', payload);
+  const out = res.data && res.data[0] ? res.data[0] : res;
+  const results = (out && out.results) || [];
+  const okN = results.filter(x => x.ok).length;
+  const failN = results.length - okN;
+  const detail = results.map(x => (x.ok ? '✓ ' : '✗ ') + x.name + ' — ' + x.msg).join('\\n');
+  alert('Done: ' + okN + ' removed, ' + failN + ' skipped/failed.\\n'
+    + (out.backup ? 'Backup log: ' + out.backup + '\\n\\n' : '\\n') + detail);
+  renderStartup();
+}
+
+const PROTECTED_SVC = ['windefend','wdnissvc','sense','securityhealthservice','mssecflt','webthreatdefsvc','wscsvc','mpssvc','msmpsvc','wdfilter','wdboot','dnscache','rpcss','lsm','plugplay','power','brokerinfrastructure','dcomlaunch','eventlog','schedule','samss','winmgmt'];
+function svcProtected(r){ return PROTECTED_SVC.includes((r.Name||'').toLowerCase()) || /windows defender/i.test(r.Path||''); }
+let serviceRows = [];
+async function renderServices(){
+  const body = document.getElementById('regBody');
+  const res = await api('/api/services');
+  if (res.ok === false){ showError('auto-start services', res.error, renderServices, body); return; }
+  const rows = res.data || [];
+  serviceRows = rows;
+  const flagged = rows.filter(r => suspicious(r.Path));
+  body.innerHTML = `
+    <div class="alert a-info">Auto-start services whose binary lives outside <span class="mono">C:\\WINDOWS</span> (third-party / more worth reviewing). Microsoft OS services are excluded.</div>
+    ${flagged.length ? `<div class="alert a-warn">${flagged.length} service path(s) match suspicious patterns (highlighted).</div>` : ''}
+    <div class="stats"><div class="stat"><div class="l">3rd-party auto services</div><div class="v">${rows.length}</div></div></div>
+    <div class="row" style="margin-bottom:.6rem">
+      <button class="mini danger" id="disSvcBtn" style="font-size:.85rem;padding:.45rem .9rem">Disable selected (reversible)</button>
+      <span class="muted" id="svcSelCount" style="padding:0;font-size:.82rem">0 selected</span>
+      <span class="muted" style="padding:0;font-size:.78rem;margin-left:auto">Disable = set to Disabled + stop. Prior config saved to C:\\ARK\\quarantine. 🔒 = protected, can't disable.</span>
+    </div>
+    <div class="scroll"><table><thead><tr>
+      <th style="width:34px"><input type="checkbox" id="svcSelAll"/></th>
+      <th>Display Name</th><th>State</th><th>Account</th><th>Binary Path</th>
+    </tr></thead><tbody>
+      ${rows.length ? rows.map((r,i) => {
+        const s = suspicious(r.Path); const prot = svcProtected(r);
+        return `<tr${s?' style="background:rgba(255,107,107,.07)"':''}>
+          <td>${prot?'<span title="Protected security/system service">🔒</span>':`<input type="checkbox" class="svcSel" data-i="${i}"/>`}</td>
+          <td>${esc(r.Display)} <span class="mono" style="font-size:.72rem;color:#6f8197">(${esc(r.Name)})</span></td>
+          <td><span class="badge ${r.State==='Running'?'b-ok':'b-warn'}">${esc(r.State)}</span></td>
+          <td style="font-size:.8rem">${esc(r.Account)}</td>
+          <td class="mono ${s?'ext':''}" style="font-size:.8rem">${esc(r.Path)}</td>
+        </tr>`;
+      }).join('') : `<tr><td colspan="5" class="muted">No third-party auto-start services</td></tr>`}
+    </tbody></table></div>`;
+  setMeta(rows.length + ' services');
+  const boxes = () => Array.from(body.querySelectorAll('.svcSel'));
+  const upd = () => body.querySelector('#svcSelCount').textContent = boxes().filter(b=>b.checked).length + ' selected';
+  boxes().forEach(b => b.onchange = upd);
+  const all = body.querySelector('#svcSelAll'); if (all) all.onchange = () => { boxes().forEach(b=>b.checked=all.checked); upd(); };
+  body.querySelector('#disSvcBtn').onclick = () => disableSelectedServices(boxes());
+}
+async function disableSelectedServices(boxes){
+  const chosen = boxes.filter(b=>b.checked).map(b=>serviceRows[parseInt(b.dataset.i,10)]).filter(Boolean);
+  if (!chosen.length){ alert('Nothing selected.'); return; }
+  const list = chosen.map(r => '  • ' + r.Display + ' (' + r.Name + ')').join('\\n');
+  if (!confirm('Disable these ' + chosen.length + ' service(s)?\\n\\n' + list
+    + '\\n\\nEach will be set to Disabled and stopped. Prior start mode is backed up so you can re-enable it. Protected security/system services are refused automatically.')) return;
+  const res = await api2json('/api/services/disable','POST',{ items: chosen.map(r=>({name:r.Name})) });
+  const out = res.data && res.data[0] ? res.data[0] : res;
+  const results = (out && out.results) || [];
+  const okN = results.filter(x=>x.ok).length;
+  alert('Done: ' + okN + ' disabled, ' + (results.length-okN) + ' skipped/refused.\\n'
+    + (out.backup?'Backup: '+out.backup+'\\n\\n':'\\n') + results.map(x=>(x.ok?'✓ ':'✗ ')+x.name+' — '+x.msg).join('\\n'));
+  renderServices();
+}
+
+let programRows = [];
+function progLocked(r){ return /microsoft|windows defender/i.test(r.Publisher||''); }
+async function renderPrograms(){
+  const body = document.getElementById('regBody');
+  const res = await api('/api/programs');
+  if (res.ok === false){ showError('installed programs', res.error, renderPrograms, body); return; }
+  const rows = res.data || [];
+  programRows = rows;
+  const noPub = rows.filter(r => !r.Publisher || !r.Publisher.trim());
+  body.innerHTML = `
+    ${noPub.length ? `<div class="alert a-warn">${noPub.length} program(s) have NO publisher (highlighted) — legitimate software almost always lists one.</div>`
+                   : `<div class="alert a-info">All installed programs list a publisher.</div>`}
+    <div class="stats">
+      <div class="stat"><div class="l">Installed programs</div><div class="v">${rows.length}</div></div>
+      <div class="stat"><div class="l">No publisher</div><div class="v" style="color:${noPub.length?'#ffc107':'#4caf50'}">${noPub.length}</div></div>
+    </div>
+    <div class="row" style="margin-bottom:.6rem">
+      <button class="mini danger" id="uninBtn" style="font-size:.85rem;padding:.45rem .9rem">Uninstall selected</button>
+      <span class="muted" id="progSelCount" style="padding:0;font-size:.82rem">0 selected</span>
+      <span class="muted" style="padding:0;font-size:.78rem;margin-left:auto">Runs the vendor's uninstaller (its window may pop up). 🔒 = Microsoft-published, protected.</span>
+    </div>
+    <div class="scroll"><table><thead><tr>
+      <th style="width:34px"></th><th>Name</th><th>Publisher</th><th>Version</th><th>Location</th>
+    </tr></thead><tbody>
+      ${rows.length ? rows.map((r,i) => {
+        const np = !r.Publisher || !r.Publisher.trim(); const lk = progLocked(r);
+        return `<tr${np?' style="background:rgba(255,193,7,.06)"':''}>
+          <td>${lk?'<span title="Microsoft-published — protected">🔒</span>':`<input type="checkbox" class="progSel" data-i="${i}"/>`}</td>
+          <td>${esc(r.Name)}</td>
+          <td class="${np?'sig-unk':''}">${np?'— none —':esc(r.Publisher)}</td>
+          <td class="mono" style="font-size:.82rem">${esc(r.Version)||'—'}</td>
+          <td class="mono" style="font-size:.78rem;color:#9fb3c8">${esc(r.Location)||'—'}</td>
+        </tr>`;
+      }).join('') : `<tr><td colspan="5" class="muted">No programs found</td></tr>`}
+    </tbody></table></div>`;
+  setMeta(rows.length + ' programs');
+  const boxes = () => Array.from(body.querySelectorAll('.progSel'));
+  const upd = () => body.querySelector('#progSelCount').textContent = boxes().filter(b=>b.checked).length + ' selected';
+  boxes().forEach(b => b.onchange = upd);
+  body.querySelector('#uninBtn').onclick = () => uninstallSelected(boxes());
+}
+async function uninstallSelected(boxes){
+  const chosen = boxes.filter(b=>b.checked).map(b=>programRows[parseInt(b.dataset.i,10)]).filter(Boolean);
+  if (!chosen.length){ alert('Nothing selected.'); return; }
+  const list = chosen.map(r => '  • ' + r.Name).join('\n');
+  if (!confirm('Uninstall these ' + chosen.length + ' program(s)?\n\n' + list
+    + '\n\nThis launches each vendor\'s own uninstaller — a setup/uninstall window may appear and need your input. Microsoft-published items are refused automatically.')) return;
+  const res = await api2json('/api/programs/uninstall','POST',{ items: chosen.map(r=>({name:r.Name})) });
+  const out = res.data && res.data[0] ? res.data[0] : res;
+  const results = (out && out.results) || [];
+  const okN = results.filter(x=>x.ok).length;
+  alert('Done: ' + okN + ' launched, ' + (results.length-okN) + ' skipped/refused.\n\n'
+    + results.map(x=>(x.ok?'✓ ':'✗ ')+x.name+' — '+x.msg).join('\n')
+    + '\n\nNote: a successful "launch" means the uninstaller started — follow its prompts to finish.');
+  setTimeout(renderPrograms, 1500);
+}
+
+// ---------- CONNECTION GUARD ----------
+let guardState = { mode: 'notify', pendingAlerts: [] };
+
+async function renderGuards(){
+  const body = document.getElementById('regBody');
+  const res = await api('/api/guard');
+  if (res.ok === false){ showError('Connection Guard', res.error, renderGuards, body); return; }
+
+  const mode = res.data && res.data.mode || 'notify';
+  const pending = res.data && res.data.pending || [];
+
+  guardState.mode = mode;
+  guardState.pendingAlerts = pending;
+
+  const modes = ['off', 'notify', 'ask'];
+
+  body.innerHTML = `
+    <div class="alert a-info" style="margin-bottom:1rem">
+      <strong>Connection Guard</strong> monitors for new inbound network connections from external IPs.
+      Choose how to handle them:
+    </div>
+    <div class="stats" style="margin-bottom:1rem">
+      <div class="stat"><div class="l">Current Mode</div><div class="v">${mode}</div></div>
+      <div class="stat"><div class="l">Pending Alerts</div><div class="v" style="color:${pending.length?'#ffc107':'#4caf50'}">${pending.length}</div></div>
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <div style="margin-bottom:.5rem;font-size:.85rem;color:#888">How should ARK handle new inbound connections?</div>
+      ${modes.map(m => `
+        <label style="display:block;margin:.3rem 0">
+          <input type="radio" name="guardMode" value="${m}" ${mode===m?'checked':''}>
+          <span style="margin-left:.5rem">${m === 'off' ? 'Off — Let all connections through, only log'
+            : m === 'notify' ? 'Notify — Alert in notification panel, let all through'
+            : 'Ask — Prompt user to allow or block each connection'}</span>
+        </label>
+      `).join('')}
+      <button class="mini act" id="saveGuardMode" style="margin-top:.5rem">Save Mode</button>
+    </div>
+
+    <div id="pendingAlertsSection">
+      ${pending.length ? `
+        <div style="margin-bottom:.5rem;font-size:.85rem;color:#888">Pending Alerts (${pending.length})</div>
+        <table style="width:100%;border-collapse:collapse">
+          <thead><tr>
+            <th>Remote</th><th>Local</th><th>PID</th><th>Action</th>
+          </tr></thead>
+          <tbody>
+            ${pending.map((p, i) => `
+              <tr style="background:rgba(0,212,255,.05)">
+                <td class="mono">${esc(p.remote)}:${p.remotePort}</td>
+                <td class="mono">${esc(p.localAddress)}:${p.localPort}</td>
+                <td class="mono">${p.pid}</td>
+                <td>
+                  <button class="mini guard-action" data-guard-action="allow_once" data-guard-conv="${p.conversationId}" style="margin-right:.3rem">Allow Once</button>
+                  <button class="mini guard-action" data-guard-action="allow_forever" data-guard-conv="${p.conversationId}" style="margin-right:.3rem">Allow Forever</button>
+                  <button class="mini danger guard-action" data-guard-action="block_forever" data-guard-conv="${p.conversationId}" style="margin-right:.3rem">Block Forever</button>
+                  <button class="mini guard-investigate-btn" data-guard-conv="${p.conversationId}" style="margin-right:.3rem">Investigate</button>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      ` : `
+        <div class="muted" style="padding:1rem;text-align:center">No pending alerts. All connections are being handled according to your mode settings.</div>
+      `}
+    </div>
+
+    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid #2a3447;font-size:.8rem;color:#888">
+      <div><strong>off</strong>: No blocking, only logged. Use for passive monitoring.</div>
+      <div><strong>notify</strong>: Alerts via Windows toast, all connections allowed.</div>
+      <div><strong>ask</strong>: Shows this dialog for each new connection. Choose Allow Once, Allow Forever, Block Forever, or Investigate.</div>
+    </div>
+  `;
+
+  setMeta('guard: ' + pending.length + ' pending');
+
+  // Add event listener for save button
+  const saveBtn = document.getElementById('saveGuardMode');
+  if (saveBtn) {
+    saveBtn.onclick = async () => {
+      const newMode = document.querySelector('input[name="guardMode"]:checked').value;
+      const r = await api2json('/api/guard/mode', 'POST', { mode: newMode });
+      if (r.ok) {
+        alert('Mode saved to ' + newMode);
+        renderGuards();
+      } else {
+        alert('Error: ' + (r.error || 'Unknown'));
+      }
+    };
+  }
+}
+
+async function guardResolve(pending, action){
+  const r = await api2json('/api/guard/resolve', 'POST', { action, conversationId: pending.conversationId });
+  if (r.ok) {
+    renderGuards();
+  } else {
+    alert('Error: ' + (r.error || 'Unknown'));
+  }
+}
+
+window.guardAllowOnce = function(convId){
+  guardResolve({ conversationId: convId }, 'allow_once');
+};
+window.guardAllowForever = function(convId){
+  guardResolve({ conversationId: convId }, 'allow_forever');
+};
+window.guardBlockForever = function(convId){
+  guardResolve({ conversationId: convId }, 'block_forever');
+};
+window.guardInvestigate = async function(pendingInput){
+  // Get process details - we need to find the pending rule first
+  const res = await api('/api/guard');
+  const pending = (res.data && res.data.pending) ? res.data.pending.find(r => r.conversationId === pendingInput.conversationId) : null;
+  if (!pending) return;
+
+  const procRes = await api('/api/process?pid=' + pending.pid);
+  const proc = procRes.data || {};
+  const info = 'Process: ' + (proc.Name || 'Unknown') + '\\n'
+             + 'Path: ' + (proc.Path || 'Unknown') + '\\n'
+             + 'Publisher: ' + (proc.Company || 'Unknown') + '\\n'
+             + 'Signature: ' + (proc.Signature || 'Unknown');
+  alert('Investigate connection from: ' + pending.remote + ':' + pending.remotePort + '\\n\\n' + info);
+  guardResolve(pending, 'investigate');
+}
+
+const RENDER = { connections: renderConnections, ports: renderPorts, firewall: renderFirewall, registry: renderRegistry, guards: renderGuards };
+const AUTO = { connections: 5000, firewall: 15000, guards: 5000 }; // auto-refresh intervals
+
+function switchTab(tab){
+  active = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+  if (timer) clearInterval(timer);
+  view.innerHTML = '<div class="muted">Loading…</div>';
+  RENDER[tab]();
+  if (AUTO[tab]) timer = setInterval(RENDER[tab], AUTO[tab]);
+}
+
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => switchTab(t.dataset.tab));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Connection guard action buttons (delegated, since they're created dynamically)
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.guard-action');
+  if (btn) {
+    const convId = btn.dataset.guardConv;
+    const action = btn.dataset.guardAction;
+    if (action === 'allow_once') guardAllowOnce({conversationId: convId});
+    else if (action === 'allow_forever') guardAllowForever({conversationId: convId});
+    else if (action === 'block_forever') guardBlockForever({conversationId: convId});
+  }
+});
+
+// Investigate button for guards (also delegated)
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.guard-investigate-btn');
+  if (btn) {
+    guardInvestigate({conversationId: btn.dataset.guardConv});
+  }
+});
+
+checkAdmin();
+switchTab('connections');
+</script>
+</body>
+</html>
